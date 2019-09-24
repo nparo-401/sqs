@@ -1,7 +1,9 @@
 # SQS Message Queue
 
 ### Links
-* [Logger](./logger/src/app.js)
+* [Logger Queue A](./logger_QueueA/src/app.js)
+* [Logger Queue B](./logger_QueueB/src/app.js)
+* [Logger Queue C](./logger_QueueC/src/app.js)
 * [App](./sqs/src/main/java/sqs/App.java)
 * [Send](./sqs/src/main/java/sqs/Send.java)
 * [Receive](./sqs/src/main/java/sqs/Receive.java)
