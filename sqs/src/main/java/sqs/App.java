@@ -8,7 +8,19 @@ import static sqs.Send.send;
 
 public class App {
     public static void main (String[] args) {
-        send();
-        receive();
+        String queueName = "";
+        switch (args[0]) {
+            case "1":
+                queueName = "QueueA";
+                break;
+            case "2":
+                queueName = "QueueB";
+                break;
+            case "3":
+                queueName = "QueueC";
+                break;
+        }
+        send(queueName);
+        receive(queueName);
     }
 }

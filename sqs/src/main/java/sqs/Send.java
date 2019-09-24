@@ -5,9 +5,10 @@ import com.amazonaws.services.sqs.AmazonSQSClientBuilder;
 import com.amazonaws.services.sqs.model.*;
 
 public class Send {
-  private static final String QUEUE_NAME = "QueueA";
+//  private static final String QUEUE_NAME = "QueueA";
   
-  public static void send() {
+  public static void send(String queueName) {
+  final String QUEUE_NAME = queueName;
     final AmazonSQS sqs = AmazonSQSClientBuilder.defaultClient();
     
     try {
