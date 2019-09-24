@@ -32,7 +32,7 @@ function App() {
 
   return (
     <div>
-      <h2>SQS Responses</h2>
+      <h2>SQS Responses Queue A</h2>
       <ul>
         {list.map( (item,i) => <li key={i}>{item}</li>)}
       </ul>

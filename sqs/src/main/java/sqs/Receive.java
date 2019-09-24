@@ -7,9 +7,10 @@ import com.amazonaws.services.sqs.model.Message;
 import java.util.List;
 
 public class Receive {
-  private static final String QUEUE_NAME = "QueueA";
+//  private static final String QUEUE_NAME = "QueueA";
   
-  public static void receive() {
+  public static void receive(String queueName) {
+    final String QUEUE_NAME = queueName;
     final AmazonSQS sqs = AmazonSQSClientBuilder.defaultClient();
     String queueUrl = sqs.getQueueUrl(QUEUE_NAME).getQueueUrl();
     
