@@ -14,7 +14,7 @@
   * `npm start` on the logger_QueueB application.
   * `npm start` on the logger_QueueC application.
 * To start the back end:
-  * `./gradlew run --arge="{QUEUE_CHOICE}"` while in the sqs sub package.
+  * `./gradlew run --args="{QUEUE_CHOICE}"` while in the sqs sub package.
     * `1` == QueueA
     * `2` == QueueB
     * `3` == QueueC
