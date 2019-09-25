@@ -1,6 +1,6 @@
 # SQS Message Queue
 
-### Links to the code:
+### Links to the code
 * React frontend:
   * [Logger Queue](./logger_Queue/src/app.js)
 * Java backend:
