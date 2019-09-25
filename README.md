@@ -27,16 +27,24 @@
 
 **SQS Queues**
 * SQS Logs Pre Lambda Pull
+
 ![sqs queues pre lambda](./assets/sqs_queues_pre.png)
+
 * SQS Logs Post Lambda Pull
+
 ![sqs queues post lambda](./assets/sqs_queues_post.png)
 
 **Cloudwatch message log for pulled messages**
 * Cloudwatch Metrics
+
 ![cloudwatch metrics](./assets/cloudwatch_metrics.png)
+
 * Cloudwatch Log Overview
+
 ![cloudwatch overview](./assets/cloudwatch_overview.png)
+
 * Cloudwatch Log Internal Views
+
 ![cloudwatch queue log1](./assets/cloudwatch_log1.png)
 ![cloudwatch queue log2](./assets/cloudwatch_log2.png)
 ![cloudwatch queue log3](./assets/cloudwatch_log3.png)
