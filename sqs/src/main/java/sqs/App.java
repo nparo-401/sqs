@@ -3,24 +3,10 @@
  */
 package sqs;
 
-import static sqs.Receive.receive;
-import static sqs.Send.send;
+import static sqs.Publish.publish;
 
 public class App {
     public static void main (String[] args) {
-        String queueName = "";
-        switch (args[0]) {
-            case "1":
-                queueName = "QueueA";
-                break;
-            case "2":
-                queueName = "QueueB";
-                break;
-            case "3":
-                queueName = "QueueC";
-                break;
-        }
-        send(queueName);
-        receive(queueName);
+        publish(args[0]);
     }
 }
