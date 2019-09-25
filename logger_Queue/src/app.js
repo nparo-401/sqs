@@ -9,9 +9,11 @@ AWS.config.update({
   secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY,
 });
 
-function App() {
+export default function App() {
 
   const [list, setList] = useState([]);
+  const [list2, setList2] = useState([]);
+  const [list3, setList3] = useState([]);
 
   useEffect( () => {
     const app = Consumer.create({
@@ -20,15 +22,21 @@ function App() {
     });
     const app2 = Consumer.create({
       queueUrl: 'https://sqs.us-west-2.amazonaws.com/830278276484/QueueB',
-      handleMessage: handler,
+      handleMessage: handler2,
     });
     const app3 = Consumer.create({
       queueUrl: 'https://sqs.us-west-2.amazonaws.com/830278276484/QueueC',
-      handleMessage: handler,
+      handleMessage: handler3,
     });
 
     function handler(message) {
       setList( (list) => [...list, message.Body]);
+    }
+    function handler2(message) {
+      setList2( (list2) => [...list2, message.Body]);
+    }
+    function handler3(message) {
+      setList3( (list3) => [...list3, message.Body]);
     }
 
     app.start();
@@ -46,14 +54,25 @@ function App() {
     };
   }, []);
 
+  const flexItem = (queueName, list) => {
+    return (
+      <div className="flex-item">
+        <h3>{queueName}</h3>
+        <ul>
+          {list.map( (item,i) => <li key={i}>{item}</li>)}
+        </ul>
+      </div>
+    )
+  }
+
   return (
     <div>
       <h2>SQS Responses</h2>
-      <ul>
-        {list.map( (item,i) => <li key={i}>{item}</li>)}
-      </ul>
+      <div id="flex-container">
+        {flexItem('QueueA', list)}
+        {flexItem('QueueB', list2)}
+        {flexItem('QueueC', list3)}
+      </div>
     </div>
   );
 }
-
-export default App;
