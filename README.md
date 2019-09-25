@@ -4,7 +4,7 @@
 * React frontend:
   * [Logger Queue](./logger_Queue/src/app.js)
 * Java backend:
-  * [App](./sqs/src/main/java/sqs/App.java)
+  * [App](./sqs/src/main/java/sqs/App.java) class is the main class where the publish method is invoked. This class requires a command line argument to run.
   * [Publish](./sqs/src/main/java/sqs/Publish.java) class takes in a command line argument with the amount of messages to be added. This class will randomly choose a Queue to add the messages to and then publish the message to that Queue.
   * [Receive](./sqs/src/main/java/sqs/Receive.java) is a lambda function which receives the messages from the SQS queues and logs them in cloud watch.
 
