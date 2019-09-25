@@ -18,21 +18,37 @@ function App() {
       queueUrl: 'https://sqs.us-west-2.amazonaws.com/830278276484/QueueA',
       handleMessage: handler,
     });
+    const app2 = Consumer.create({
+      queueUrl: 'https://sqs.us-west-2.amazonaws.com/830278276484/QueueB',
+      handleMessage: handler,
+    });
+    const app3 = Consumer.create({
+      queueUrl: 'https://sqs.us-west-2.amazonaws.com/830278276484/QueueC',
+      handleMessage: handler,
+    });
 
     function handler(message) {
       setList( (list) => [...list, message.Body]);
     }
 
     app.start();
+    app2.start();
+    app3.start();
 
     console.log(app);
+    console.log(app2);
+    console.log(app3);
 
-    return () => app.stop();
+    return () => {
+      app.stop();
+      app2.stop();
+      app3.stop();
+    };
   }, []);
 
   return (
     <div>
-      <h2>SQS Responses Queue A</h2>
+      <h2>SQS Responses</h2>
       <ul>
         {list.map( (item,i) => <li key={i}>{item}</li>)}
       </ul>
